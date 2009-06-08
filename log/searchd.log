@@ -1,0 +1,16 @@
+[Fri Jun  5 12:30:36.235 2009] [ 4642] creating server socket on 127.0.0.1:3312
+[Fri Jun  5 12:30:36.236 2009] [ 4642] accepting connections
+[Fri Jun  5 12:51:50.441 2009] [ 4642] caught SIGTERM, shutting down
+[Fri Jun  5 12:51:50.489 2009] [ 4642] shutdown complete
+[Fri Jun  5 13:35:42.010 2009] [ 4814] creating server socket on 127.0.0.1:3312
+[Fri Jun  5 13:35:42.011 2009] [ 4814] accepting connections
+[Fri Jun  5 15:03:07.362 2009] [ 4814] caught SIGTERM, shutting down
+[Fri Jun  5 15:03:07.364 2009] [ 4814] shutdown complete
+[Fri Jun  5 15:53:28.917 2009] [ 5330] creating server socket on 127.0.0.1:3312
+[Fri Jun  5 15:53:28.930 2009] [ 5330] accepting connections
+[Fri Jun  5 15:56:28.770 2009] [ 5330] caught SIGTERM, shutting down
+[Fri Jun  5 15:56:28.771 2009] [ 5330] shutdown complete
+[Fri Jun  5 15:56:50.362 2009] [ 5360] creating server socket on 127.0.0.1:3312
+[Fri Jun  5 15:56:50.362 2009] [ 5360] accepting connections
+[Mon Jun  8 09:19:11.303 2009] [ 5360] caught SIGTERM, shutting down
+[Mon Jun  8 09:19:11.305 2009] [ 5360] shutdown complete

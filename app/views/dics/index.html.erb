@@ -1,0 +1,29 @@
+<h1>Listing dics</h1>
+
+<% form_tag root_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+
+<% end %>
+
+
+<table>
+  <tr>
+    <th>Word</th>
+  </tr>
+
+<% @dics.each do |dic| %>
+  <tr>
+    <td><%=h dic.word %></td>
+    <td><%= link_to 'Show', dic %></td>
+    <td><%= link_to 'Edit', edit_dic_path(dic) %></td>
+    <td><%= link_to 'Destroy', dic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @dics, :next_label => 'Następna', :previous_label => 'Poprzednia'  %>
+
+<%= link_to 'New dic', new_dic_path %>

@@ -1,0 +1,2 @@
+module DicsHelper
+end

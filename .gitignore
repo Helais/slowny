@@ -3,6 +3,7 @@
 README.priv
 Capfile
 config/*.yml
+config/*sphinx.conf
 config/deploy.rb
 config/initializers/session_store.rb
 db/*.sqlite3

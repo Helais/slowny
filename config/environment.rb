@@ -10,6 +10,10 @@ Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
+  config.action_controller.session = {
+    :session_key => '_slowny_session',
+    :secret      => '801f725bd9a788c8759d8265a4e87a94ecc47ece3d7e68ec8c2d69d2964ccfa8a8fededfd6414ffe2c9e9a1871d094c982e692bd94e7a56d8dd42ddb0af06a33'
+  }
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )

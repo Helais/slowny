@@ -5,7 +5,8 @@ describe ThinkingSphinx::Search do
   describe "search method" do
     describe ":star option" do
       before :each do
-        @client = Riddle::Client.stub_instance(
+        @client = Riddle::Client.new
+        @client.stub!(
           :filters    => [],
           :filters=   => true,
           :id_range=  => true,
@@ -26,25 +27,29 @@ describe ThinkingSphinx::Search do
       end
       
       it "should not apply by default" do
+        @client.should_receive(:query).with("foo bar",'*','')
+        
         ThinkingSphinx::Search.search "foo bar"
-        @client.should have_received(:query).with("foo bar",'*','')
       end
 
       it "should apply when passed, and handle full extended syntax" do
         input    = %{a b* c (d | e) 123 5&6 (f_f g) !h "i j" "k l"~10 "m n"/3 @o p -(q|r)}
         expected = %{*a* b* *c* (*d* | *e*) *123* *5*&*6* (*f_f* *g*) !*h* "i j" "k l"~10 "m n"/3 @o *p* -(*q*|*r*)}
+        @client.should_receive(:query).with(expected,'*','')
+        
         ThinkingSphinx::Search.search input, :star => true
-        @client.should have_received(:query).with(expected,'*','')
       end
 
       it "should default to /\w+/ as token" do
+        @client.should_receive(:query).with("*foo*@*bar*.*com*",'*','')
+        
         ThinkingSphinx::Search.search "foo@bar.com", :star => true
-        @client.should have_received(:query).with("*foo*@*bar*.*com*",'*','')
       end
 
       it "should honour custom token" do
+        @client.should_receive(:query).with("*foo@bar.com* -*foo-bar*",'*','')
+        
         ThinkingSphinx::Search.search "foo@bar.com -foo-bar", :star => /[\w@.-]+/u
-        @client.should have_received(:query).with("*foo@bar.com* -*foo-bar*",'*','')
       end
     end
     
@@ -83,6 +88,20 @@ describe ThinkingSphinx::Search do
       it "should use :attr_desc if explicitly requested with a string supplied to :order" do
         ThinkingSphinx::Search.search "foo", :order => "created_at", :sort_mode => :desc
         @client.sort_mode.should == :attr_desc
+      end
+    end
+    
+    describe "grouping" do
+      before :each do
+        @client = Riddle::Client.new
+        @client.stub_method(:query => {:matches => []})
+        Riddle::Client.stub_method(:new => @client)
+      end
+
+      it "should convert group into group_by and group_function" do
+        ThinkingSphinx::Search.search "foo", :group => :edition
+        @client.group_function.should == :attr
+        @client.group_by.should == "edition"
       end
     end
     
@@ -165,6 +184,18 @@ describe ThinkingSphinx::Search do
       ThinkingSphinx::Search.facets(
         :facets => ['city'],
         :class  => Person
+      )
+    end
+    
+    it "should not use an explicit :page" do
+      ThinkingSphinx::Search.stub!(:search).and_return(@city_results, @birthday_results)
+      ThinkingSphinx::Search.should_receive(:search) do |options|
+        options[:page].should == 1
+      end
+      
+      ThinkingSphinx::Search.facets(
+        :all_attributes => true,
+        :page           => 3
       )
     end
     

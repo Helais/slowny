@@ -4,9 +4,9 @@ class DicsController < ApplicationController
   def index
     
     #@dics = Dic.all
-    @dics_all = Dic.all
+    #@dics_all = Dic.all if params[:search]
     @dics = Dic.search params[:search],
-    :page => params[:page], :per_page => 2
+    :page => params[:page], :per_page => 20 if params[:search]
 
     respond_to do |format|
       format.html # index.html.erb

@@ -15,7 +15,8 @@ input.textfield, textarea { width: 30%; padding: 2px; color: #777; background: #
 
 #searchform { padding: 0; margin: 0;}
 #searchform input {vertical-align: middle;}
-#searchform ol li { list-style: none; }
+#searchform ol { padding: 0; margin: 0; }
+#searchform ol li { list-style: none; margin-bottom: 10px; }
 #searchform label { float: left; }
 #searchform fieldset { margin: 0 0 10px; padding: 5px; border: 0; background: transparent url('/images/bg_search.png');}
 #searchform input#search-field { height: 30px; width: 40%; margin: 0; font-size: 170%; }

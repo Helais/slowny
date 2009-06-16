@@ -17,9 +17,9 @@ input.textfield, textarea { width: 30%; padding: 2px; color: #777; background: #
 #searchform input {vertical-align: middle;}
 #searchform ol li { list-style: none; }
 #searchform label { float: left; }
-#searchform fieldset {margin: 0 0 10px; padding: 5px; border: 0; background: #ccc;}
+#searchform fieldset {height: 30px; margin: 0 0 10px; padding: 5px; border: 0; background: #ccc;}
 #searchform input#search-field { width: 40%; margin: 0; font-size: 170%; }
-#searchform input#search-submit { cursor: pointer; text-align: center; background-color: #000; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
+#searchform input#search-submit { height: 34px; cursor: pointer; text-align: center; background-color: #000; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
 #searchform input#search-submit:hover { background-color: #0099ff !important; }
 
 .fieldWithErrors { padding: 2px; background-color: red; display: table; }

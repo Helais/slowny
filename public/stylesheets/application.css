@@ -1,27 +1,34 @@
-body { padding: 20px; background-color: #fff; color: #333; font-family: Arial, Verdana, sans-serif; background: #fff url(/images/bg.jpg); }
+body { text-align:center; padding: 20px 25px 20px 25px; background-color: #666; font-family: Arial, Verdana, sans-serif; background: #fff url(/images/bg.jpg); }
 
-body, p, ol, ul, td { font-family: verdana, arial, helvetica, sans-serif; font-size:   13px; line-height: 18px; }
+body, p, ol, ul, td { font-size: 13px; color: #d7c55f; }
 
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
 
 h1, h2, h3, h4 { font-weight: normal; }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a { color: #ff9900; }
+a:visited { color: #ff9900; }
+a:hover { color: #ffd016; }
 	
 input.textfield:focus, textarea:focus { color: #333; }
 input.textfield, textarea { width: 30%; padding: 2px; color: #777; background: #f9f9f9; font-size: 150%; }
 
+#results { font-size: 110%; color: white; line-height: 2.1em; margin: 10px 0 15px 0;}
+
+.pagination { font-size: 105%; color: #d7c55f; }
+
+span.ok { margin: 0 2px 0 2px; padding: 4px; background: #314508; }
+span.counter { font-size: 120%; padding: 4px; color:#304006; background:#e3ee6f; }
+span.no-ok { margin: 0 2px 0 2px; padding: 4px; color: #ffcccc; background: #990000; }
+
 #searchform { padding: 0; margin: 0;}
 #searchform input {vertical-align: middle;}
-#searchform ol { padding: 0; margin: 0; }
-#searchform ol li { list-style: none; margin-bottom: 10px; }
-#searchform label { float: left; }
-#searchform fieldset { margin: 0 0 10px; padding: 5px; border: 0; background: transparent url('/images/bg_search.png');}
-#searchform input#search-field { height: 30px; width: 40%; margin: 0; font-size: 170%; }
-#searchform input#search-submit { height: 36px; cursor: pointer; text-align: center; background-color: #000; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
-#searchform input#search-submit:hover { background-color: #0099ff !important; }
+#searchform ol { padding: 0; margin: 0 auto; width: 70%; background:transparent; }
+#searchform ol li { list-style: none; margin-bottom: 10px; background:transparent; text-align:left; }
+#searchform fieldset { margin: 0 0 10px 0; padding: 20px; border: 0; background: transparent url('/images/bg_search.png');}
+#searchform input#search-field { height: 30px; width: 83%; margin: 0; font-size: 170%; }
+#searchform input#search-submit { height: 36px; cursor: pointer; text-align: center; background-color: #ff9900; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
+#searchform input#search-submit:hover { background-color: #879e19 !important; }
 
 .fieldWithErrors { padding: 2px; background-color: red; display: table; }
 

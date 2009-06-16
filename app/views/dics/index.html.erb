@@ -12,10 +12,18 @@
 <% end %>
 
 <% if @dics %>
-	<% @dics.each do |dic| %>
-	  <%=h dic.word %> 
-	<% end %>
-	
+	<div id="results">
+		<% if @dics.length > 0 %>
+			<p><span class="counter"><%= h @dics.total_entries %></span></p>
+			<p>
+			<% @dics.each do |dic| %>
+			  <span class="ok"><%=h dic.word %></span> 
+			<% end %>
+			</p>
+		<% else %>
+			<p><span class="no-ok">Niestety, nic nie znaleziono</span></p>
+		<% end %>
+	</div>
 	<%= will_paginate @dics, :path => 'user', :next_label => 'Następna', :previous_label => 'Poprzednia'  %>
 	
 <% end %>

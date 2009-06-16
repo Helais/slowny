@@ -23,11 +23,11 @@ span.no-ok { margin: 0 2px 0 2px; padding: 4px; color: #ffcccc; background: #990
 
 #searchform { padding: 0; margin: 0;}
 #searchform input {vertical-align: middle;}
-#searchform ol { padding: 0; margin: 0 auto; width: 70%; background:transparent; }
+#searchform ol { padding: 0; margin: 0 auto; max-width:600px; width: 70%; background:transparent; }
 #searchform ol li { list-style: none; margin-bottom: 10px; background:transparent; text-align:left; }
 #searchform fieldset { margin: 0 0 10px 0; padding: 20px; border: 0; background: transparent url('/images/bg_search.png');}
-#searchform input#search-field { height: 30px; width: 83%; margin: 0; font-size: 170%; }
-#searchform input#search-submit { height: 36px; cursor: pointer; text-align: center; background-color: #ff9900; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
+#searchform input#search-field { height: 30px; width: 65%; margin: 0; font-size: 170%; }
+#searchform input#search-submit { width: 30%; height: 36px; cursor: pointer; text-align: center; background-color: #ff9900; border: 0; padding:8px;margin: 0; color: #fff !important; font-size: 120%; }
 #searchform input#search-submit:hover { background-color: #879e19 !important; }
 
 .fieldWithErrors { padding: 2px; background-color: red; display: table; }

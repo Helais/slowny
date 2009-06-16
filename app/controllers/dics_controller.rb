@@ -5,12 +5,20 @@ class DicsController < ApplicationController
     
     #@dics = Dic.all
     #@dics_all = Dic.all if params[:search]
-    @dics = Dic.search params[:search],
+    #@dics = Dic.find :all, :conditions => {:count_letters => params[:size].to_i}
+    
+    cond = {}
+    cond[:count_letters] = [params[:size].to_i] if params[:size].to_i > 0
+    #@dics = Dic.find(:all, :conditions => cond)
+    #cond[:condition] = [" word '?' " , /^.params[:starts_with]/] if !params[:starts_with].blank?
+    
+    @dics = Dic.search params[:search], 
+    :conditions => cond,
     :page => params[:page], :per_page => 20 if params[:search]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @dics_all.to_xml(:only => :word) }
+      format.xml  { render :xml => @dics.to_xml(:only => :word) }
     end
   end
 

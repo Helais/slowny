@@ -1,11 +1,14 @@
-<h1>slowny - beta version</h1>
+<h1>Słowny.pl - beta version</h1>
 
-<% form_tag root_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-
+<% form_tag root_path, :method => :get, :id => 'searchform' do %>
+  <fieldset>
+	<ol>
+    	<li><%= text_field_tag :search, params[:search], :id => 'search-field', :class => 'textfield' %>
+	<!--<%= label_tag :starts_with, "Zaczyna się od: " %><%= text_field_tag :starts_with, params[:starts_with] %>-->
+    <%= submit_tag "Szukaj", :name => nil, :id => 'search-submit' %></li>
+		<li><%= label_tag :size, "Ilość liter: " %><%= select_tag :size, options_for_select(Dic::WORD_SIZE, params[:size].to_i) %></li>
+	</ol>
+  </fieldset>
 <% end %>
 
 <% if @dics %>

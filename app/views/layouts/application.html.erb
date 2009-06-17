@@ -1,10 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>slowny.pl</title>
+  <meta name="author" content="mymanufactory.com" />
+  <meta name="description" content="Slowny.pl - słownik do gier. Zastosowania: sprawdzanie dopuszczalności słów w grach" />
+  <title>slowny.pl - </title>
   <%= stylesheet_link_tag 'application' %>
   <!--[if lte IE 6]>
     <%= javascript_include_tag 'supersleight' %>
@@ -12,9 +14,25 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<%= image_tag("slowny-logo.png") %>
+<h1 class="subtitle">Słownik do gier słownych - wersja beta!</h1>
 
 <%= yield %>
+
+<div id="footer">
+	<p id="licence">Lista słów oparta została na <a href="http://www.sjp.pl/slownik/growy/"> słowniku do gier słownych</a> udostępnianym na zasadzie licencji GPL przez serwis <a href="http://sjp.pl/">sjp.pl</a></p>
+	<p id="author"><a href="http://www.mymanufactory.com/">mymanufactory.com</a></p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9363058-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
 </body>
 </html>

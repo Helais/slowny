@@ -1,21 +1,27 @@
 body { text-align:center; padding: 20px 25px 20px 25px; background-color: #666; font-family: Arial, Verdana, sans-serif; background: #fff url(/images/bg.jpg); }
 
-body, p, ol, ul, td { font-size: 13px; color: #d7c55f; }
+body, p, ol, ul, td { font-size: 13px; color: #e3ea6d; }
 
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
 
 h1, h2, h3, h4 { font-weight: normal; }
+h1.subtitle { color: #f90; margin: 0; padding: 0; font-size: 98%; font-weight: bold; }
 
-a { color: #ff9900; }
-a:visited { color: #ff9900; }
-a:hover { color: #ffd016; }
+a { color: #bccd38; }
+a:visited { color: #bccd38; }
+a:hover { color: #bccd38; text-decoration: none; }
+
+#top { margin: 0 auto; max-width: 650px; }
+#footer { margin: 25px auto; padding: 0 0 10px 0; max-width:650px; border-top: 3px solid #314508; }
+#footer p { color: #323a05; font-size: 88%; }
+#footer p a, #footer p a:visited, #footer p a:hover { color: #323a05; }
 	
 input.textfield:focus, textarea:focus { color: #333; }
 input.textfield, textarea { width: 30%; padding: 2px; color: #777; background: #f9f9f9; font-size: 150%; }
 
 #results { font-size: 110%; color: white; line-height: 2.1em; margin: 10px 0 15px 0;}
 
-.pagination { font-size: 105%; color: #d7c55f; }
+.pagination { font-size: 105%; color: #e3ea6d; }
 
 span.ok { margin: 0 2px 0 2px; padding: 4px; background: #314508; }
 span.counter { font-size: 120%; padding: 4px; color:#304006; background:#e3ee6f; }

@@ -12,7 +12,8 @@ class Dic < ActiveRecord::Base
   
   define_index do
     set_property :min_infix_len => 3
-    indexes word, :sortable => true
+    #indexes word, :sortable => true
+    indexes word
     indexes count_letters
   end
 end
